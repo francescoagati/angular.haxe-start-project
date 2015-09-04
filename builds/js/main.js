@@ -254,6 +254,6 @@ if(typeof(scope.performance.now) == "undefined") {
 		return $r;
 	}(this));
 }
-Main.app = { modules : [""], assets : [[]], routes : { paths : [{ controller : "", template_url : "", route : ""}], default_path : ""}};
+Main.app = { modules : [""], assets : [["https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css","https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.min.js","https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"]], routes : { paths : [{ controller : "", template_url : "", route : ""}], default_path : ""}};
 Main.main();
 })(typeof console != "undefined" ? console : {log:function(){}});
