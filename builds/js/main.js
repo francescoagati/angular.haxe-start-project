@@ -1,8 +1,7 @@
 (function (console) { "use strict";
-var Config = function() { };
 var Main = function() { };
 Main.main = function() {
-	var config = Config.app;
+	var config = Main.app;
 	var assets = config.assets;
 	var __return = function() {
 		var module = window.angular.module("name",config.modules);
@@ -153,6 +152,6 @@ browser_$tools_Assets.wait = function(n,cb) {
 var q = window.jQuery;
 var js = js || {}
 js.JQuery = q;
-Config.app = { modules : [""], assets : [[]], routes : { paths : [{ controller : "", template_url : "", route : ""}], default_path : ""}};
+Main.app = { modules : [""], assets : [[]], routes : { paths : [{ controller : "", template_url : "", route : ""}], default_path : ""}};
 Main.main();
 })(typeof console != "undefined" ? console : {log:function(){}});
