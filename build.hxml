@@ -1,0 +1,5 @@
+-js builds/js/main.js
+-main Main
+-dce full
+-D analyzer
+-lib browser_tools async_tools compiletime angular.haxe thx.core continuation

@@ -1,0 +1,10 @@
+{
+  "assets":[
+    []
+  ],
+  "modules":[""],
+  "routes":{
+    "default_path":"",
+    "paths": [{"route":"","controller":"","template_url":""}]
+  }
+}
