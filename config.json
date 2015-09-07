@@ -8,13 +8,12 @@
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"
     ],
     [
-      "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"
     ]
   ],
-  "modules":[""],
+  "modules":["ngRoute"],
   "routes":{
-    "default_path":"",
-    "paths": [{"route":"","controller":"","template_url":""}]
+    "default_path":"/output",
+    "paths": [{"route":"/output","controller":"OutputController","template_url":"/output.html"}]
   }
 }

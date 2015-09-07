@@ -7,6 +7,9 @@ HxOverrides.iter = function(a) {
 		return this.arr[this.cur++];
 	}};
 };
+var OutputController = function() { };
+OutputController.factory = function(scope) {
+};
 var async_$tools_Async = function() { };
 var Main = function() { };
 Main.__interfaces__ = [async_$tools_Async];
@@ -28,13 +31,21 @@ Main.main = function() {
 	});
 	var __afterVar_14 = function(module) {
 		module;
+		module.controller("OutputController",["$scope",OutputController.factory]);
+		window.angular.bootstrap(window.document.getElementById("app"),["app"]);
 		var element1 = window.document.getElementById("browser-tools-loading");
 		if($bind(element1,element1.remove) == null) element1.parentNode.removeChild(element1); else element1.remove();
 		element1;
 		var tmp1;
 		var node1 = window.document.body;
 		tmp1 = node1.getElementsByClassName("start-hide");
-		tmp1[0].style.display = "block";
+		var elements = tmp1;
+		var _g = 0;
+		while(_g < elements.length) {
+			var element2 = elements[_g];
+			++_g;
+			element2.style.display = "block";
+		}
 		thx_Functions.noop();
 	};
 	var config = Main.app;
@@ -43,16 +54,17 @@ Main.main = function() {
 	};
 	var assets = config.assets;
 	var __return1 = function() {
-		var module1 = window.angular.module("name",config.modules);
+		var module1 = window.angular.module("app",config.modules);
 		module1;
+		window.console.log("create angular module","app");
 		var config1 = config;
 		module1.config(["$routeProvider",function(route) {
 			var route2 = route;
-			var _g = 0;
-			var _g1 = config1.routes.paths;
-			while(_g < _g1.length) {
-				var route1 = _g1[_g];
-				++_g;
+			var _g1 = 0;
+			var _g11 = config1.routes.paths;
+			while(_g1 < _g11.length) {
+				var route1 = _g11[_g1];
+				++_g1;
 				var route_path = route1.route;
 				var route_controller = route1.controller;
 				var route_templateUrl = route1.template_url;
@@ -63,6 +75,7 @@ Main.main = function() {
 			route2;
 		}]);
 		module1;
+		window.console.log("","route processed");
 		__return(module1);
 	};
 	var __iterator = 0;
@@ -72,26 +85,29 @@ Main.main = function() {
 	__continue_01 = function() {
 		if(__iterator < assets.length) {
 			if(__doCount++ == 0) while(true) {
-				var group = assets[__iterator++];
-				group;
-				var __afterVar_3 = [(function() {
+				var group = [assets[__iterator++]];
+				group[0];
+				var __afterVar_3 = [(function(group) {
 					return function(grr) {
 						grr;
+						window.console.log("loaded group:",group[0]);
 						__continue_01();
 					};
-				})()];
-				var group1 = group;
+				})(group)];
+				var group1 = group[0];
 				var __return2 = [(function(__afterVar_3) {
 					return function(__parameter_10) {
 						__afterVar_3[0](__parameter_10);
 					};
 				})(__afterVar_3)];
+				window.console.log("","start loading assets");
 				var __afterVar_4 = [(function(__return2) {
 					return function(assets1) {
 						assets1;
 						browser_$tools_Assets.wait(1,(function(__return2) {
 							return function(__parameter_9) {
 								__parameter_9;
+								window.console.log("","end loading assets");
 								__return2[0](assets1);
 							};
 						})(__return2));
@@ -108,16 +124,18 @@ Main.main = function() {
 						};
 					})(__counter,__results,__afterVar_4)];
 					while(true) {
-						var asset = group1[__iterator1++];
+						var asset = [group1[__iterator1++]];
 						var __index = [__i];
 						__counter[0]++;
-						var file = [asset];
-						var __return3 = [(function(__index,__checkCounter,__results) {
+						var file = [asset[0]];
+						var __return3 = [(function(__index,asset,__checkCounter,__results) {
 							return function(__parameter_8) {
-								__results[0][__index[0]] = __parameter_8;
+								__parameter_8;
+								window.console.log("load asset:",asset[0]);
+								__results[0][__index[0]] = asset[0];
 								__checkCounter[0]();
 							};
-						})(__index,__checkCounter,__results)];
+						})(__index,asset,__checkCounter,__results)];
 						var __endIf_0 = [(function(__return3,file) {
 							return function() {
 								__return3[0](file[0]);
@@ -254,6 +272,6 @@ if(typeof(scope.performance.now) == "undefined") {
 		return $r;
 	}(this));
 }
-Main.app = { modules : [""], assets : [["https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css","https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.min.js","https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"]], routes : { paths : [{ controller : "", template_url : "", route : ""}], default_path : ""}};
+Main.app = { modules : ["ngRoute"], assets : [["https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css","https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"]], routes : { paths : [{ controller : "OutputController", template_url : "/output.html", route : "/output"}], default_path : "/output"}};
 Main.main();
 })(typeof console != "undefined" ? console : {log:function(){}});
