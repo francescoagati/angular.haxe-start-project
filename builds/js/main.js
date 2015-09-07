@@ -9,6 +9,14 @@ HxOverrides.iter = function(a) {
 };
 var OutputController = function() { };
 OutputController.factory = function(scope) {
+	var scope_dyn = scope;
+	var chart1 = { };
+	chart1.type = "ColumnChart";
+	chart1.cssStyle = "height:200px; width:300px;";
+	chart1.data = { 'cols' : [{ id : "month", label : "Month", type : "string"},{ id : "laptop-id", label : "Laptop", type : "number"},{ id : "desktop-id", label : "Desktop", type : "number"},{ id : "server-id", label : "Server", type : "number"},{ id : "cost-id", label : "Shipping", type : "number"}], 'rows' : [{ c : [{ v : "January"},{ v : 19, f : "42 items"},{ v : 12, f : "Ony 12 items"},{ v : 7, f : "7 servers"},{ v : 4, f : ""}]},{ c : [{ v : "February"},{ v : 13},{ v : 1, f : "1 unit (Out of stock this month)"},{ v : 12},{ v : 2}]},{ c : [{ v : "March"},{ v : 24},{ v : 0},{ v : 11},{ v : 6}]}]};
+	chart1.options = { 'title' : "Sales per month", 'isStacked' : "true", 'fill' : 20, 'displayExactValues' : true, 'vAxis' : { 'title' : "Sales unit", 'gridlines' : { 'count' : 6}}, 'hAxis' : { 'title' : "Date"}};
+	chart1.formatters = { };
+	scope_dyn.chart = chart1;
 };
 var async_$tools_Async = function() { };
 var Main = function() { };
@@ -272,6 +280,6 @@ if(typeof(scope.performance.now) == "undefined") {
 		return $r;
 	}(this));
 }
-Main.app = { modules : ["ngRoute"], assets : [["https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css","https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"]], routes : { paths : [{ controller : "OutputController", template_url : "/output.html", route : "/output"}], default_path : "/output"}};
+Main.app = { modules : ["ngRoute","googlechart"], assets : [["https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css","https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"],["https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js","https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.0.11/ng-google-chart.min.js"]], routes : { paths : [{ controller : "OutputController", template_url : "/output.html", route : "/output"}], default_path : "/output"}};
 Main.main();
 })(typeof console != "undefined" ? console : {log:function(){}});

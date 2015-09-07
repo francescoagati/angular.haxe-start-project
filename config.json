@@ -8,10 +8,12 @@
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"
     ],
     [
-      "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.0.11/ng-google-chart.min.js"
+
     ]
   ],
-  "modules":["ngRoute"],
+  "modules":["ngRoute","googlechart"],
   "routes":{
     "default_path":"/output",
     "paths": [{"route":"/output","controller":"OutputController","template_url":"/output.html"}]

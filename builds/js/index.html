@@ -8,7 +8,10 @@
   <div id="app">
 
     <script type="text/ng-template" id="/output.html">
-      Content of the template.
+
+      <div google-chart chart="chart" style="{{chart.cssStyle}}"></div>
+
+
     </script>
 
     <ng-view></ng-view>
